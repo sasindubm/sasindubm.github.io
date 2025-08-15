@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,6 +96,16 @@
             position: relative;
         }
 
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 217, 255, 0.15);
+        }
+
         .hero-content {
             z-index: 2;
         }
@@ -110,8 +121,13 @@
         }
 
         @keyframes glow {
-            from { filter: drop-shadow(0 0 20px var(--accent-color)); }
-            to { filter: drop-shadow(0 0 30px var(--success-color)); }
+            from {
+                filter: drop-shadow(0 0 20px var(--accent-color));
+            }
+
+            to {
+                filter: drop-shadow(0 0 30px var(--success-color));
+            }
         }
 
         .typing-animation {
@@ -194,9 +210,17 @@
             border-radius: 50%;
         }
 
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27ca3f; }
+        .dot-red {
+            background: #ff5f56;
+        }
+
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+
+        .dot-green {
+            background: #27ca3f;
+        }
 
         .terminal-content {
             font-family: 'Courier New', monospace;
@@ -268,9 +292,17 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* Projects */
@@ -359,11 +391,26 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Scrollbar */
@@ -395,6 +442,7 @@
         }
     </style>
 </head>
+
 <body>
     <canvas class="matrix-bg" id="matrix"></canvas>
 
@@ -413,6 +461,7 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
+            <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
             <h1>Hello, World!</h1>
             <div class="typing-animation">
                 <span id="typed-text"></span><span class="cursor">|</span>
@@ -454,7 +503,9 @@
                 <i class="fab fa-osi"></i>
             </div>
             <h3>Open Source Enthusiast</h3>
-            <p>I believe in the power of collaboration and knowledge sharing. Contributing to open source projects isn't just about code—it's about building a better digital world together. Every commit, every pull request, every issue solved makes technology more accessible for everyone.</p>
+            <p>I believe in the power of collaboration and knowledge sharing. Contributing to open source projects isn't
+                just about code—it's about building a better digital world together. Every commit, every pull request,
+                every issue solved makes technology more accessible for everyone.</p>
             <div class="code-block">
                 <pre>
 git commit -m "Making the world a better place, one line at a time"
@@ -513,7 +564,8 @@ git push origin community-driven-innovation
         <div class="projects-grid">
             <div class="project-card">
                 <h3>🌐 Full-Stack Web Application</h3>
-                <p>A scalable web application built with modern frameworks, featuring responsive design and robust backend architecture.</p>
+                <p>A scalable web application built with modern frameworks, featuring responsive design and robust
+                    backend architecture.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Laravel</span>
                     <span class="tech-tag">JavaScript</span>
@@ -522,7 +574,8 @@ git push origin community-driven-innovation
             </div>
             <div class="project-card">
                 <h3>🤖 Network Automation Suite</h3>
-                <p>Collection of bash scripts for automating network configuration, monitoring, and optimization tasks.</p>
+                <p>Collection of bash scripts for automating network configuration, monitoring, and optimization tasks.
+                </p>
                 <div class="project-tech">
                     <span class="tech-tag">Bash</span>
                     <span class="tech-tag">Networking</span>
@@ -531,7 +584,8 @@ git push origin community-driven-innovation
             </div>
             <div class="project-card">
                 <h3>🔌 IoT Monitoring System</h3>
-                <p>Arduino-based IoT solution for real-time monitoring and data collection with web dashboard integration.</p>
+                <p>Arduino-based IoT solution for real-time monitoring and data collection with web dashboard
+                    integration.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Arduino</span>
                     <span class="tech-tag">Node.js</span>
@@ -540,7 +594,8 @@ git push origin community-driven-innovation
             </div>
             <div class="project-card">
                 <h3>🎨 Responsive UI Components</h3>
-                <p>Reusable component library built with modern CSS frameworks for rapid prototyping and development.</p>
+                <p>Reusable component library built with modern CSS frameworks for rapid prototyping and development.
+                </p>
                 <div class="project-tech">
                     <span class="tech-tag">CSS3</span>
                     <span class="tech-tag">Tailwind</span>
@@ -583,7 +638,7 @@ git push origin community-driven-innovation
         function draw() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             ctx.fillStyle = '#00d9ff';
             ctx.font = fontSize + 'px monospace';
 
@@ -659,4 +714,5 @@ git push origin community-driven-innovation
         });
     </script>
 </body>
+
 </html>
